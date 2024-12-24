@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Webpage</title>
+    
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <style>
+        /* Your CSS code from the previous message goes here */
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar-heading">
+            <a href="#">
+                <img class="navbar-logo" src="IEEE_CSPITlogo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">Members</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Image Slider Section -->
+    <div class="image-slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="tech-jobs-in-India--3-.webp" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="techday_c0342dba19bbd26114a4.webp" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="Zz1lOWNmY2Y2NGNjYmExMWVkYjE1Zjg2MjdhZGU5MzA4MQ==.webp" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="careers_in_electrical_engineering.jpg" alt="Slide 3">
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length; // Cycle back to the first slide
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Set the interval for auto-sliding
+    setInterval(nextSlide, 3000); // 3000ms = 3 seconds
+});
+    </script>
+
+
+<div class="scroll-section">
+    <!-- Info Container -->
+    <div class="info-container">
+        <h2 class="info-heading">Empowering Future Innovators</h2>
+        <div class="info-box">
+            At IEEE CSPIT, we aim to inspire and equip students to push the boundaries of technology and innovation. Join us in shaping a smarter and brighter future.
+        </div>
+    </div>
+
+    <!-- Video Container -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="ieew.mp4" type="video/mp4">
+         
+        </video>
+    </div>
+</div>
+
+<!-- JavaScript for Scroll Animation -->
+<script>
+    document.addEventListener("scroll", function () {
+        const scrollSection = document.querySelector(".scroll-section");
+        const infoContainer = document.querySelector(".info-container");
+        const videoContainer = document.querySelector(".video-container");
+
+        const sectionTop = scrollSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) { // Trigger animation when section is near the viewport
+            infoContainer.classList.add("visible");
+            videoContainer.classList.add("visible");
+        }
+    });
+</script>
+
+
+<div class="ieee-charusat-section">
+    <!-- Video Container -->
+    <div class="charusat-video-container">
+        <video autoplay muted loop>
+            <source src="ieew.mp4" type="video/mp4">
+           
+        </video>
+    </div>
+
+    <!-- Info Container -->
+    <div class="charusat-info-container">
+        <h2 class="charusat-info-heading">IEEE at CSPIT</h2>
+        <div class="charusat-info-box">
+            IEEE at CSPIT empowers students with innovative knowledge, collaborative opportunities, and the tools needed to lead the future of technology. Become a part of a community that fosters excellence and innovation.
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Scroll Animation -->
+<script>
+    document.addEventListener("scroll", function () {
+        const charusatSection = document.querySelector(".ieee-charusat-section");
+        const infoContainer = document.querySelector(".charusat-info-container");
+        const videoContainer = document.querySelector(".charusat-video-container");
+
+        const sectionTop = charusatSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) { // Trigger animation when section is near the viewport
+            infoContainer.classList.add("visible");
+            videoContainer.classList.add("visible");
+        }
+    });
+</script>
+
+
+<section class="ieee-societies-section">
+    <div class="ieee-societies-heading" id="societiesHeading">
+        IEEE Societies
+    </div>
+</section>
+
+<section class="society-section">
+    <div class="society-container">
+        <!-- Society 1 -->
+        <div class="society-card">
+            <img src="society1-logo.jpg" alt="Society 1 Logo" class="society-logo">
+            <div class="society-title">Society 1</div>
+            <div class="society-subtitle">Description of Society 1</div>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <!-- Society 2 -->
+        <div class="society-card">
+            <img src="society2-logo.jpg" alt="Society 2 Logo" class="society-logo">
+            <div class="society-title">Society 2</div>
+            <div class="society-subtitle">Description of Society 2</div>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <!-- Society 3 -->
+        <div class="society-card">
+            <img src="society3-logo.jpg" alt="Society 3 Logo" class="society-logo">
+            <div class="society-title">Society 3</div>
+            <div class="society-subtitle">Description of Society 3</div>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript to trigger visibility after scroll
+    window.addEventListener('scroll', function() {
+        var heading = document.getElementById('societiesHeading');
+        var rect = heading.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            heading.classList.add('visible');
+        }
+    });
+</script>
+
+
+
+<section id="events-glimpse">
+    <div class="confetti-heading">
+        Glimpses of Our Past Events
+    </div>
+
+    <!-- Slider Container -->
+    <div class="slider-container">
+        <div class="slider">
+            <!-- Event 1 -->
+            <div class="slider-box">
+                <img src="event1.jpg" alt="Event 1">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <div class="slider-box">
+                <img src="event2.jpg" alt="Event 2">
+                <div class="arrow">&#8594;</div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="slider-box">
+                <img src="event3.jpg" alt="Event 3">
+                <div class="arrow">&#8594;</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  const slider = document.querySelector('.slider');
+        let sliderWidth = slider.scrollWidth; // Total width of all the slider boxes
+        let containerWidth = document.querySelector('.slider-container').offsetWidth; // Width of the container
+        let currentPosition = 0; // Starting position of the slider
+
+        function moveSlider() {
+            // Update current position
+            currentPosition -= 1; // Move 1 pixel left
+            if (Math.abs(currentPosition) >= sliderWidth) {
+                currentPosition = 0; // Reset position to 0 after one full slide
+            }
+            slider.style.transform = `translateX(${currentPosition}px)`; // Apply the transform to move the slider
+            requestAnimationFrame(moveSlider); // Call the function again for the next frame
+        }
+
+        // Start the slider movement
+        moveSlider();
+</script>
+
+
+<section class="content-wrapper">
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="Zz1lOWNmY2Y2NGNjYmExMWVkYjE1Zjg2MjdhZGU5MzA4MQ==.webp" alt="Benefit Image">
+    </div>
+
+    <!-- Benefits Information Section -->
+    <div id="benefits">
+        <div class="section-subtitle">Our Advantages</div>
+        <div class="section-title">Why Choose Us</div>
+        <div class="section-description">
+            We provide a variety of benefits to help you achieve your goals efficiently and effectively. Here are some of the key advantages you will enjoy.
+        </div>
+
+        <!-- Benefits Boxes -->
+        <div class="benefits-boxes">
+            <div class="benefit-box">
+                <div class="benefit-number">1</div>
+                <div class="benefit-text">High Quality</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">2</div>
+                <div class="benefit-text">Expert Support</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">3</div>
+                <div class="benefit-text">Affordable Prices</div>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-number">4</div>
+                <div class="benefit-text">Fast Delivery</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Contact Us Section -->
+ <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <h1>Contact Us</h1>
+    <form action="your-form-processing-endpoint" method="POST">
+        <!-- Name and Email Section -->
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+                <i class="fa fa-envelope"></i>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="form-group">
+            <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+            <i class="fa fa-comment"></i>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+
+
+
+
+<!-- Footer Section -->
+<div class="footer">
+    <div class="footer-content">
+        <!-- About Section -->
+        <div class="about-section">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        </div>
+
+        <!-- Societies Section -->
+        <div class="societies-section">
+            <h3>Our Societies</h3>
+            <ul>
+                <li>Society 1</li>
+                <li>Society 2</li>
+                <li>Society 3</li>
+                <li>Society 4</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-phone"></i> 123-456-7890</p>
+            <p><i class="fa fa-envelope"></i> info@example.com</p>
+        </div>
+
+        <!-- Updates Section -->
+        <div class="updates-section">
+            <h3>Stay Updated</h3>
+            <form action="#" method="post">
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Bottom Section -->
+<div class="footer-bottom">
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+    <nav>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+    </nav>
+</div>
+
+<!-- Add FontAwesome for icons (if you don't have it already included) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
