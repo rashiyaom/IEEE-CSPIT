@@ -1,4 +1,4 @@
-/* Basic reset */
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,13 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Navbar Styling */
@@ -19,20 +22,268 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1.5rem; /* Reduced padding */
+    padding: 0.5rem 1.5rem;
     background-color: #1f1f1f;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    height: 90px; /* Set a fixed height for the navbar */
-    overflow: hidden; /* Hide any overflow caused by scaling */
+    height: 90px;
+    overflow: hidden;
 }
 
-/* Navbar Heading with Logo Image */
 .navbar-heading {
     display: flex;
     align-items: center;
+}
+
+.navbar-heading a {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 60px;
+    object-fit: contain;
+    transform: scale(1.2);
+    transform-origin: left center;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 3rem;
+    margin-right: 30px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #00AEEF;
+}
+
+/* Image Slider Styling */
+.image-slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100vh;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section Styling */
+.scroll-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    margin-top: 40px;
+}
+
+.info-container,
+.video-container {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.info-container {
+    transform: translateX(-50px);
+}
+
+.video-container {
+    transform: translateX(50px);
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-heading {
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #555;
+    max-width: 600px;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* IEEE Societies Section */
+.ieee-societies-section {
+    padding: 80px 50px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.ieee-societies-heading {
+    font-size: 80px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.ieee-societies-heading::before,
+.ieee-societies-heading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 2px;
+    background-color: #5bdc42;
+    transform: translateY(-50%);
+}
+
+.ieee-societies-heading::before {
+    left: 0;
+}
+
+.ieee-societies-heading::after {
+    right: 0;
+}
+
+/* Society Cards */
+.society-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.society-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    margin-bottom: 150px;
+}
+
+.society-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.society-logo {
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+}
+
+.society-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #012970;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #004b99;
+}
+
+/* Calendar Section */
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calendar {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #00629B;
+    color: #fff;
+    padding: 10px;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-day.event {
+    background-color: #C4D600;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+
 }
 
 .navbar-heading a {
@@ -320,7 +571,7 @@ charusat-video-container video {
   .society-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 100px;
     flex-wrap: wrap;
   }
   
@@ -473,6 +724,7 @@ charusat-video-container video {
  /* Glimpses of Our Past Events Heading */
  .confetti-heading {
     font-size: 40px; /* Adjust font size as needed */
+    margin-bottom: 100px;
     font-weight: bold;
     color: #333; /* Default text color */
     text-align: center; /* Center align the heading */
@@ -481,17 +733,315 @@ charusat-video-container video {
     cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
 
-/* Hover Effect for Glimpses Heading */
-.confetti-heading:hover {
-    color: #FFA500; /* Change color to orange on hover */
-    transform: scale(1.1); /* Slightly enlarge the text on hover */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for effect */
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #00629B;
+    text-align: center;
+}
+
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calendar {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00629B;
+    color: #fff;
+    padding: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-day.event {
+    background-color: #C4D600;
+    color: #fff;
+}
+
+.event-details {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.event-details h3 {
+    color: #00629B;
+    margin-top: 0;
+}
+
+.event-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
 }
 
 
 
 
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  
+}
+
+h1 {
+    color: #00629B;
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-bottom: 250px;
+}
+
+.calendar {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00629B;
+    color: #000000;
+    padding: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 100px;
+    padding: 10px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-day.event {
+    background-color: #000000;
+    color: #fff;
+}
+
+.event-details {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.event-details h3 {
+    color: #00629B;
+    margin-top: 0;
+}
+
+.event-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #00629B;
+    text-align: center;
+}
+
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calendar {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00629B;
+    color: #fff;
+    padding: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-day.event {
+    background-color: #C4D600;
+    color: #fff;
+}
+
+.event-details {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.event-details h3 {
+    color: #00629B;
+    margin-top: 0;
+}
+
+.event-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+}
 
 
 
@@ -758,6 +1308,7 @@ textarea::-webkit-scrollbar-thumb {
     padding: 40px 20px;
     color: #FFFFFF;
     margin-top: 200px;
+    height: 400px ;
 }
 
 .footer-content {
@@ -844,7 +1395,7 @@ textarea::-webkit-scrollbar-thumb {
     background-color: #00aaf2;
     padding: 10px ;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 0px;
     width: 100%;
 }
 
