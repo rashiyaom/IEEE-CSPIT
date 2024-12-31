@@ -5,40 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Webpage</title>
     
-    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="mobile.css"> <!-- Link to the external CSS file -->
     <style>
         /* Your CSS code from the previous message goes here */
     </style>
-
-    <script>
-        function adjustDimensions() {
-            const isMobile = window.innerWidth <= 768;
-            document.body.classList.toggle('mobile-view', isMobile);
-            document.body.classList.toggle('desktop-view', !isMobile);
-        }
-
-        window.addEventListener('resize', adjustDimensions);
-        document.addEventListener('DOMContentLoaded', adjustDimensions);
-    </script>
-    </head>
-    
+</head>
 <body>
 
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="navbar-heading">
-            <a href="#">
-                <img class="navbar-logo" src="IEEE_CSPITlogo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="navbar-links">
-            <a href="#">Home</a>
-            <a href="#scroll-section">About</a>
-            <a href="#events-glimpse">Events</a> <!-- Redirects to Glimpses of Our Past Events section -->
-            <a href="#">Members</a>
-            <a href="#contact-container">Contact</a> 
-        </div>
-    </nav>
+   <!-- Navbar Section -->
+<nav class="navbar">
+    <div class="navbar-heading">
+        
+    </div>
+    <div class="navbar-links">
+        <a href="#">Home</a>
+        <a href="#scroll-section">About</a>
+        <a href="#events-glimpse">Events</a> <!-- Redirects to Glimpses of Our Past Events section -->
+        <a href="#">Members</a>
+        <a href="#contact-container">Contact</a> 
+    </div>
+    <!-- Hamburger Icon for Mobile View -->
+    <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
+</nav>
+<script>function toggleMenu() {
+    const menu = document.querySelector('.navbar-links');
+    menu.classList.toggle('active');
+}
+</script>
+
+
+
+
+
+
 
     <!-- Image Slider Section -->
     <div class="image-slider">
@@ -72,6 +71,13 @@
     setInterval(nextSlide, 3000); // 3000ms = 3 seconds
 });
     </script>
+
+
+
+
+
+
+
 
 
 <div class="scroll-section" id="scroll-section">
@@ -111,14 +117,7 @@
 
 
 <div class="ieee-charusat-section" >
-    <!-- Video Container -->
-    <div class="charusat-video-container">
-        <video autoplay muted loop>
-            <source src="ieew.mp4" type="video/mp4">
-           
-        </video>
-    </div>
-
+   
     <!-- Info Container -->
     <div class="charusat-info-container">
         <h2 class="charusat-info-heading">IEEE at CSPIT</h2>
@@ -126,6 +125,24 @@
             The IEEE SB at CSPIT College is a dynamic platform for aspiring engineers to innovate, collaborate, and grow. Hosting workshops, seminars, and competitions, it fosters hands-on learning and industry connections. With active chapters like the Computer Society and Women in Engineering, IEEE CSPIT empowers students to explore cutting-edge technology and lead the future of engineering.
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+     <!-- Video Container -->
+     <div class="charusat-video-container">
+        <video autoplay muted loop>
+            <source src="ieew.mp4" type="video/mp4">
+           
+        </video>
+    </div>
+
 </div>
 
 <!-- JavaScript for Scroll Animation -->
@@ -144,6 +161,10 @@
         }
     });
 </script>
+
+
+
+
 
 <section id="events-glimpse">
     <div class="confetti-heading">
@@ -230,6 +251,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <section class="ieee-societies-section">
     <div class="ieee-societies-heading" id="societiesHeading">
         IEEE Societies
@@ -267,16 +299,15 @@
 <script>
     // JavaScript to trigger visibility after scroll
     window.addEventListener('scroll', function() {
-        var heading = document.getElementById('societiesHeading');
-        var rect = heading.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            heading.classList.add('visible');
-        }
-    });
+    var heading = document.getElementById('societiesHeading');
+    var rect = heading.getBoundingClientRect();
+    
+    // If the element is in view, add "visible" class
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        heading.classList.add('visible');
+    }
+});
 </script>
-
-
-
 
 
 
@@ -299,6 +330,7 @@
         </div>
     </div>
 </div>
+
 <script>
 const calendarBody = document.getElementById('calendarBody');
 const currentMonthElement = document.getElementById('currentMonth');
@@ -310,130 +342,136 @@ let currentDate = new Date();
 
 // Updated event data for January and February 2025
 const events = {
-'2025-01-05': { 
-    title: 'National Conference', 
-    description: 'A prestigious conference with key industry leaders.', 
-    time: '10:00 AM', 
-    location: 'Grand Hall', 
-    image: 'https://via.placeholder.com/300x200.png?text=National+Conference' 
-},
-'2025-01-08': { 
-    title: 'Seminar', 
-    description: 'Informative seminar on the latest in technology.', 
-    time: '2:00 PM', 
-    location: 'Auditorium', 
-    image: 'https://via.placeholder.com/300x200.png?text=Seminar' 
-},
-'2025-01-19': { 
-    title: 'Expert Talk', 
-    description: 'Interactive session with an industry expert.', 
-    time: '4:00 PM', 
-    location: 'Room 305', 
-    image: 'https://via.placeholder.com/300x200.png?text=Expert+Talk' 
-},
-'2025-01-25': { 
-    title: 'Group Discussion', 
-    description: 'Engage in dynamic discussions with peers.', 
-    time: '5:00 PM', 
-    location: 'Conference Room B', 
-    image: 'https://via.placeholder.com/300x200.png?text=Group+Discussion' 
-},
-'2025-02-02': { 
-    title: 'Coding Hackathon', 
-    description: 'A day-long competitive programming event.', 
-    time: '9:00 AM', 
-    location: 'Tech Lab', 
-    image: 'https://via.placeholder.com/300x200.png?text=Coding+Hackathon' 
-},
-'2025-02-14': { 
-    title: 'Tech Fest', 
-    description: 'Explore exciting technology projects and innovations.', 
-    time: '11:00 AM', 
-    location: 'Expo Center', 
-    image: 'https://via.placeholder.com/300x200.png?text=Tech+Fest' 
-},
-'2025-02-22': { 
-    title: 'Leadership Workshop', 
-    description: 'Develop key leadership skills with expert mentors.', 
-    time: '3:00 PM', 
-    location: 'Main Hall', 
-    image: 'https://via.placeholder.com/300x200.png?text=Leadership+Workshop' 
-},
-'2025-02-28': { 
-    title: 'Research Paper Presentation', 
-    description: 'Showcase groundbreaking research in technology.', 
-    time: '10:00 AM', 
-    location: 'Room 101', 
-    image: 'https://via.placeholder.com/300x200.png?text=Research+Presentation' 
-},
+    '2025-01-05': { 
+        title: 'National Conference', 
+        description: 'A prestigious conference with key industry leaders.', 
+        time: '10:00 AM', 
+        location: 'Grand Hall', 
+        image: 'https://via.placeholder.com/300x200.png?text=National+Conference' 
+    },
+    '2025-01-08': { 
+        title: 'Seminar', 
+        description: 'Informative seminar on the latest in technology.', 
+        time: '2:00 PM', 
+        location: 'Auditorium', 
+        image: 'https://via.placeholder.com/300x200.png?text=Seminar' 
+    },
+    '2025-01-19': { 
+        title: 'Expert Talk', 
+        description: 'Interactive session with an industry expert.', 
+        time: '4:00 PM', 
+        location: 'Room 305', 
+        image: 'https://via.placeholder.com/300x200.png?text=Expert+Talk' 
+    },
+    '2025-01-25': { 
+        title: 'Group Discussion', 
+        description: 'Engage in dynamic discussions with peers.', 
+        time: '5:00 PM', 
+        location: 'Conference Room B', 
+        image: 'https://via.placeholder.com/300x200.png?text=Group+Discussion' 
+    },
+    '2025-02-02': { 
+        title: 'Coding Hackathon', 
+        description: 'A day-long competitive programming event.', 
+        time: '9:00 AM', 
+        location: 'Tech Lab', 
+        image: 'https://via.placeholder.com/300x200.png?text=Coding+Hackathon' 
+    },
+    '2025-02-14': { 
+        title: 'Tech Fest', 
+        description: 'Explore exciting technology projects and innovations.', 
+        time: '11:00 AM', 
+        location: 'Expo Center', 
+        image: 'https://via.placeholder.com/300x200.png?text=Tech+Fest' 
+    },
+    '2025-02-22': { 
+        title: 'Leadership Workshop', 
+        description: 'Develop key leadership skills with expert mentors.', 
+        time: '3:00 PM', 
+        location: 'Main Hall', 
+        image: 'https://via.placeholder.com/300x200.png?text=Leadership+Workshop' 
+    },
+    '2025-02-28': { 
+        title: 'Research Paper Presentation', 
+        description: 'Showcase groundbreaking research in technology.', 
+        time: '10:00 AM', 
+        location: 'Room 101', 
+        image: 'https://via.placeholder.com/300x200.png?text=Research+Presentation' 
+    },
     '2025-02-18': { 
-    title: 'Research Paper Presentation', 
-    description: 'Showcase groundbreaking research in technology.', 
-    time: '10:00 AM', 
-    location: 'Room 101', 
-    image: 'https://via.placeholder.com/300x200.png?text=Research+Presentation' 
-},
+        title: 'Research Paper Presentation', 
+        description: 'Showcase groundbreaking research in technology.', 
+        time: '10:00 AM', 
+        location: 'Room 101', 
+        image: 'https://via.placeholder.com/300x200.png?text=Research+Presentation' 
+    },
 };
 
 function generateCalendar(year, month) {
-const firstDay = new Date(year, month, 1);
-const lastDay = new Date(year, month + 1, 0);
-const daysInMonth = lastDay.getDate();
-const startingDay = firstDay.getDay();
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const startingDay = firstDay.getDay();
 
-calendarBody.innerHTML = '';
-currentMonthElement.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${year}`;
+    calendarBody.innerHTML = '';
+    currentMonthElement.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${year}`;
 
-for (let i = 0; i < startingDay; i++) {
-    calendarBody.appendChild(document.createElement('div'));
-}
-
-for (let day = 1; day <= daysInMonth; day++) {
-    const dateElement = document.createElement('div');
-    dateElement.classList.add('calendar-day');
-    dateElement.textContent = day;
-
-    const currentDateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    if (events[currentDateString]) {
-        dateElement.classList.add('event');
-        dateElement.addEventListener('click', () => showEventDetails(currentDateString));
-    } else {
-        dateElement.addEventListener('click', () => showNoEvent());
+    for (let i = 0; i < startingDay; i++) {
+        calendarBody.appendChild(document.createElement('div'));
     }
 
-    calendarBody.appendChild(dateElement);
-}
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateElement = document.createElement('div');
+        dateElement.classList.add('calendar-day');
+        dateElement.textContent = day;
+
+        const currentDateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        if (events[currentDateString]) {
+            dateElement.classList.add('event');
+            dateElement.addEventListener('click', () => showEventDetails(currentDateString));
+        } else {
+            dateElement.addEventListener('click', () => showNoEvent());
+        }
+
+        calendarBody.appendChild(dateElement);
+    }
 }
 
 function showEventDetails(date) {
-const event = events[date];
-eventDetails.innerHTML = `
-    <h3>${event.title}</h3>
-    <p><strong>Date:</strong> ${date}</p>
-    <p><strong>Time:</strong> ${event.time}</p>
-    <p><strong>Location:</strong> ${event.location}</p>
-    <p>${event.description}</p>
-    <img src="${event.image}" alt="${event.title}" class="event-image">
-`;
+    const event = events[date];
+    eventDetails.innerHTML = `
+        <h3>${event.title}</h3>
+        <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Time:</strong> ${event.time}</p>
+        <p><strong>Location:</strong> ${event.location}</p>
+        <p>${event.description}</p>
+        <img src="${event.image}" alt="${event.title}" class="event-image">
+    `;
 }
 
 function showNoEvent() {
-eventDetails.innerHTML = '<p>No events scheduled for this date.</p>';
+    eventDetails.innerHTML = '<p>No events scheduled for this date.</p>';
 }
 
 prevMonthBtn.addEventListener('click', () => {
-currentDate.setMonth(currentDate.getMonth() - 1);
-generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 });
 
 nextMonthBtn.addEventListener('click', () => {
-currentDate.setMonth(currentDate.getMonth() + 1);
-generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 });
 
 // Initialize the calendar
 generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 </script>
+
+
+
+
+
+
 
 
 
@@ -480,8 +518,14 @@ generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 </section>
 
 
- <!-- Contact Us Section -->
- <div class="contact-container" id = contact-container>
+
+
+
+
+
+
+<!-- Contact Us Section -->
+<div class="contact-container" id="contact-container">
     <h2>Get in Touch</h2>
     <h1>Contact Us</h1>
     <form action="your-form-processing-endpoint" method="POST">
@@ -506,12 +550,16 @@ generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
         <!-- Submit Button -->
         <button type="submit">Send Message</button>
     </form>
-    
 </div>
 
 
 
 
+
+
+
+
+ 
 
 <!-- Footer Section -->
 <div class="footer">
@@ -522,23 +570,7 @@ generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
             <p>The IEEE Student Branch at CSPIT is a hub for innovation and learning, empowering students to excel in engineering and technology through events, workshops, and professional networking.</p>
         </div>
 
-        <!-- Societies Section -->
-        <div class="societies-section">
-            <h3>Our Societies</h3>
-            <ul>
-                <li>Computer Society</li>
-                <li>Women In Engineering</li>
-                <li>Antenna & Propogation</li>
-                
-            </ul>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="contact-section">
-            <h3>Contact Us</h3>
-            <p><i class="fa fa-phone"></i> 123-456-7890</p>
-            <p><i class="fa fa-envelope"></i> ieeecspit@gmail.com</p>
-        </div>
+    
 
         <!-- Updates Section -->
         <div class="updates-section">
@@ -563,6 +595,7 @@ generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 
 <!-- Add FontAwesome for icons (if you don't have it already included) -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
 
+
+</body>
 </html>
