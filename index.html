@@ -9,7 +9,19 @@
     <style>
         /* Your CSS code from the previous message goes here */
     </style>
-</head>
+
+    <script>
+        function adjustDimensions() {
+            const isMobile = window.innerWidth <= 768;
+            document.body.classList.toggle('mobile-view', isMobile);
+            document.body.classList.toggle('desktop-view', !isMobile);
+        }
+
+        window.addEventListener('resize', adjustDimensions);
+        document.addEventListener('DOMContentLoaded', adjustDimensions);
+    </script>
+    </head>
+    
 <body>
 
     <!-- Navbar Section -->
